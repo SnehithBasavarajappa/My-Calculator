@@ -1,0 +1,68 @@
+
+*{
+    margin:0;
+    padding:0;             /*unviersal tag*/
+    box-sizing:border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:black;
+    text-align: center;
+}
+
+.block{
+    position: relative;
+    margin: 10% auto 0;
+    width:400px;
+    height:580px;
+    background:linear-gradient(0deg,black,rgb(44,44,44));
+    padding:20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.glow::before,.glow::after{
+    content: '';
+    position:absolute;
+    left:-2px;
+    top:-2px;                                                               /*for border animation content */
+    background: linear-gradient(45deg,#ffff,#222f3d,#099fff,#00f);
+    background-clip: 400%;
+    width:calc(100% + 5px);
+    height:calc(100% + 5px);
+    z-index:-1;
+    animation:animate 20s linear infinite;
+}
+.block glow{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.calculator form input{
+    border:0;
+    outline:0;
+    width:60px;
+    height:60px;
+    border-radius:10px;
+    box-shadow:-8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0,0,0,0.2);
+    cursor:pointer;
+    margin:10px;
+}
+form .display{
+    display:flex;
+    justify-content: flex-end;      /*for display input content*/
+    margin:20px 0;
+}
+form .display input{
+    text-align: right;
+    flex:1;
+    font-size:45px;
+    box-shadow: none;
+}
+form input.equal{
+    width:145px;
+
+}
+ form input.operator{
+    color:black;
+}
